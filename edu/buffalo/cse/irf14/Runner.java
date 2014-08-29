@@ -28,8 +28,8 @@ public class Runner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String ipDir = "/Users/nicarus/Downloads/reuters_corpus-90_cat/training";//args[0];
-		String indexDir = null;//args[1];
+		String ipDir = args[0];
+		String indexDir = args[1];
 		//more? idk!
 		
 		File ipDirectory = new File(ipDir);
