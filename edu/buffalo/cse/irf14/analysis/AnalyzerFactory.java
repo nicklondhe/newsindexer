@@ -33,10 +33,11 @@ public class AnalyzerFactory {
 	 * {@link TokenFilter} instances if need be
 	 * @param name: The {@link FieldNames} for which the {@link Analyzer}
 	 * is requested
+	 * @param TokenStream : Stream for which the Analyzer is requested
 	 * @return The built {@link Analyzer} instance for an indexable {@link FieldNames}
 	 * null otherwise
 	 */
-	public Analyzer getAnalyzerForField(FieldNames name) {
+	public Analyzer getAnalyzerForField(FieldNames name, TokenStream stream) {
 		//TODO : YOU NEED TO IMPLEMENT THIS METHOD
 		return null;
 	}

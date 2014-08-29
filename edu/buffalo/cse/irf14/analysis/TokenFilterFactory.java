@@ -29,11 +29,12 @@ public class TokenFilterFactory {
 	/**
 	 * Returns a fully constructed {@link TokenFilter} instance
 	 * for a given {@link TokenFilterType} type
-	 * @param name: The {@link TokenFilterType} for which the {@link TokenFilter}
+	 * @param type: The {@link TokenFilterType} for which the {@link TokenFilter}
 	 * is requested
+	 * @param stream: The TokenStream instance to be wrapped
 	 * @return The built {@link TokenFilter} instance
 	 */
-	public TokenFilter getFilterByType(TokenFilterType type) {
+	public TokenFilter getFilterByType(TokenFilterType type, TokenStream stream) {
 		//TODO : YOU MUST IMPLEMENT THIS METHOD
 		return null;
 	}
