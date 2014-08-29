@@ -28,8 +28,8 @@ public class Runner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String ipDir = args[0];
-		String indexDir = args[1];
+		String ipDir = "/Users/nicarus/Downloads/reuters_corpus-90_cat/training";//args[0];
+		String indexDir = null;//args[1];
 		//more? idk!
 		
 		File ipDirectory = new File(ipDir);
@@ -43,12 +43,15 @@ public class Runner {
 		
 		try {
 			for (String cat : catDirectories) {
-				dir = new File(cat);
+				dir = new File(ipDir+ File.separator+ cat);
 				files = dir.list();
+				
+				if (files == null)
+					continue;
 				
 				for (String f : files) {
 					try {
-						d = Parser.parse(f);
+						d = Parser.parse(dir.getAbsolutePath() + File.separator +f);
 						writer.addDocument(d);
 					} catch (ParserException e) {
 						// TODO Auto-generated catch block
