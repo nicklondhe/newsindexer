@@ -78,7 +78,7 @@ public class TokenStream implements Iterator<Token>{
 	 * the latter moves the stream forward, this one does not.
 	 * Calling this method multiple times would not alter the return value of {@link TokenStream#hasNext()}
 	 * @return The current {@link Token} if one exists, null if end of stream
-	 * has been reached
+	 * has been reached or the current Token was removed
 	 */
 	public Token getCurrent() {
 		//TODO: YOU MUST IMPLEMENT THIS
