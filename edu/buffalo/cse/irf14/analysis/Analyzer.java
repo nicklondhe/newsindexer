@@ -15,10 +15,12 @@ import edu.buffalo.cse.irf14.document.FieldNames;
 public interface Analyzer {
 	/**
 	 * Method to indicate that the implementing class must complete 
-	 * all its processing on the current {@link Token} and proceed to next 
+	 * all its processing on the current {@link Token} and proceed to next
+	 * @return true if a Token exists in the stream that is unprocessed, 
+	 * false if no more unprocessed tokens exist 
 	 * @throws TokenizerException : If any exception occurs during the operation
 	 */
-	public abstract void increment() throws TokenizerException;
+	public abstract boolean increment() throws TokenizerException;
 	
 	/**
 	 * Return the underlying {@link TokenStream} instance

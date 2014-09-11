@@ -1,7 +1,6 @@
 package edu.buffalo.cse.irf14.analysis.test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import edu.buffalo.cse.irf14.analysis.TokenFilter;
 import edu.buffalo.cse.irf14.analysis.TokenFilterFactory;
@@ -11,24 +10,27 @@ import edu.buffalo.cse.irf14.analysis.Tokenizer;
 import edu.buffalo.cse.irf14.analysis.TokenizerException;
 
 public class TFRuleBaseTest {
-	public final String[] runTest(String str) throws TokenizerException {
+	protected final String[] runTest(String str, TokenFilterType type) throws TokenizerException {
 		Tokenizer tkizer = new Tokenizer();
 		TokenStream tstream = tkizer.consume(str);
 		TokenFilterFactory factory = TokenFilterFactory.getInstance();
-		TokenFilter filter = factory.getFilterByType(TokenFilterType.SPECIALCHARS, tstream);
-		tstream.reset();
+		TokenFilter filter = factory.getFilterByType(type, tstream);
 		
-		while (tstream.hasNext()) {
-			filter.increment();
+		while (filter.increment()) {
+			//Do nothing :/
 		}
 		
 		tstream = filter.getStream();
 		tstream.reset();
 		
 		ArrayList<String> list = new ArrayList<String>();
+		String s;
 		
 		while (tstream.hasNext()) {
-			list.add(tstream.next().toString());
+			s = tstream.next().toString();
+			
+			if (s!= null && !s.isEmpty())
+				list.add(s);
 		}
 		
 		String[] rv = new String[list.size()];
