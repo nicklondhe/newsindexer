@@ -72,4 +72,17 @@ public class TokenStream implements Iterator<Token>{
 		//TODO : YOU MUST IMPLEMENT THIS
 	}
 	
+	/**
+	 * Method to get the current Token from the stream without iteration.
+	 * The only difference between this method and {@link TokenStream#next()} is that
+	 * the latter moves the stream forward, this one does not.
+	 * Calling this method multiple times would not alter the return value of {@link TokenStream#hasNext()}
+	 * @return The current {@link Token} if one exists, null if end of stream
+	 * has been reached or the current Token was removed
+	 */
+	public Token getCurrent() {
+		//TODO: YOU MUST IMPLEMENT THIS
+		return null;
+	}
+	
 }
