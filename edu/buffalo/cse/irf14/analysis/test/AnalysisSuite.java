@@ -13,7 +13,8 @@ import org.junit.runners.Suite.SuiteClasses;
 				StopWordsRuleTest.class,
 				SymbolRuleTest.class,
 				StemmerRuleTest.class,
-				TokenizerTest.class})
+				TokenizerTest.class,
+				TokenStreamTest.class})
 public class AnalysisSuite {
 
 }
