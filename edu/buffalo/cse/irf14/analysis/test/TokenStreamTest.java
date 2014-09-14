@@ -5,6 +5,7 @@ package edu.buffalo.cse.irf14.analysis.test;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -44,8 +45,12 @@ public class TokenStreamTest {
 		stream = tokenizer.consume("this is a test");
 	}
 	
+	@After
 	public void tearDown() {
-		stream = null;
+		while (stream.hasNext()) {
+			stream.next();
+			stream.remove();
+		}
 	}
 	
 	/**

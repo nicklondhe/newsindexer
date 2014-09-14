@@ -14,7 +14,8 @@ import org.junit.runners.Suite.SuiteClasses;
 				SymbolRuleTest.class,
 				StemmerRuleTest.class,
 				TokenizerTest.class,
-				TokenStreamTest.class})
+				TokenStreamTest.class,
+				TokenTest.class})
 public class AnalysisSuite {
 
 }
