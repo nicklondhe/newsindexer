@@ -58,7 +58,6 @@ public class TokenTest {
 		Token t1 = stream.next(), t2 = stream.next();
 		assertNotNull(t1);
 		assertNotNull(t2);
-		assertFalse(stream.hasNext());
 		invokeMerge(t1, t2);
 		String str = t1.toString();
 		assertNotNull(str);
