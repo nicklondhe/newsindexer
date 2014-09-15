@@ -121,7 +121,8 @@ public class TokenTest {
 	}
 	
 	private static void invokeMerge(Token dest, Token... targets) throws Exception {
-		m.invoke(dest, (Object[]) targets);
+		Object[] param = {targets};
+		m.invoke(dest, param);
 	}
 
 }

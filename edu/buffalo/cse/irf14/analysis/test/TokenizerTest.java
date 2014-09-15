@@ -84,10 +84,10 @@ public class TokenizerTest {
 	@Test
 	public final void testMultipleTokens() {
 		try {
-			TokenStream ts = spaceTknizer.consume("This is a longer test.");
+			TokenStream ts = spaceTknizer.consume("This is a longer test");
 			assertArrayEquals(new String[]{"This", "is", "a", "longer", "test"}, serializeStream(ts));
 			
-			ts = delimTknizer.consume("This_is_a_longer_test.");
+			ts = delimTknizer.consume("This_is_a_longer_test");
 			assertArrayEquals(new String[]{"This", "is", "a", "longer", "test"}, serializeStream(ts));
 		} catch (TokenizerException e) {
 			fail("Exception thrown when not expected!");
@@ -100,10 +100,10 @@ public class TokenizerTest {
 	@Test
 	public final void testMultipleTokensWithMultipleDelims() {
 		try {
-			TokenStream ts = spaceTknizer.consume("   This    is  a     longer     test.    ");
+			TokenStream ts = spaceTknizer.consume("   This    is  a     longer     test    ");
 			assertArrayEquals(new String[]{"This", "is", "a", "longer", "test"}, serializeStream(ts));
 			
-			ts = delimTknizer.consume("__This____is___a__longer____test._____");
+			ts = delimTknizer.consume("__This____is___a__longer____test_____");
 			assertArrayEquals(new String[]{"This", "is", "a", "longer", "test"}, serializeStream(ts));
 		} catch (TokenizerException e) {
 			fail("Exception thrown when not expected!");

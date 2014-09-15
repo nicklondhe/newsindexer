@@ -126,6 +126,7 @@ public class TokenStreamTest {
 			assertTrue(true);
 		}
 		
+		stream.reset();
 		//correct removals
 		for (int i = 0; i < 4; i++) {
 			stream.next();
@@ -158,7 +159,7 @@ public class TokenStreamTest {
 		Token t = stream.next();
 		assertNotNull(t);
 		assertEquals("this", t.toString());
-		
+		stream.reset();
 		//no-op on empty stream
 		while (stream.hasNext()) {
 			stream.next();
@@ -262,6 +263,7 @@ public class TokenStreamTest {
 		
 		//null at end
 		assertFalse(stream.hasNext());
+		assertNull(stream.next());
 		assertNull(stream.getCurrent());
 		
 		//ensure doesnt move ptr
@@ -270,10 +272,12 @@ public class TokenStreamTest {
 		while (stream.hasNext()) {
 			tNext = stream.next();
 			
-			for (int i = 0; i < 5; i++) {
-				tCurrent = stream.getCurrent();
-				assertTrue(stream.hasNext());
-				assertEquals(tNext, tCurrent);
+			if (stream.hasNext()) {
+				for (int i = 0; i < 5; i++) {
+					tCurrent = stream.getCurrent();
+					assertTrue(stream.hasNext());
+					assertEquals(tNext, tCurrent);
+				}
 			}
 		}
 		
