@@ -228,13 +228,17 @@ public class IndexerTest {
 
 		HashMap<String, Integer> temp = null;
 		String[] splits;
-		
+		int val;
+
 		for (String cnt : counts) {
 			temp = new HashMap<String, Integer>();
 			splits = cnt.split("/");
 			
 			for (int i = 0; i < 4; i++) {
-				temp.put(docids[i], Integer.valueOf(splits[i]));
+				val = Integer.valueOf(splits[i]);
+
+				if (val > 0)
+					temp.put(docids[i], val);
 			}
 			
 			retlist.add(temp);
