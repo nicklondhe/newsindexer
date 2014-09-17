@@ -197,7 +197,7 @@ public class IndexerTest {
 	}
 
 	private Map<String, Integer> intersect(HashMap<String, Integer>...hashMaps) {
-		HashMap<String, Integer> basemap = hashMaps[0];
+		HashMap<String, Integer> basemap = new HashMap<String, Integer>(hashMaps[0]);
 		
 		int len = hashMaps.length;
 		String key;
