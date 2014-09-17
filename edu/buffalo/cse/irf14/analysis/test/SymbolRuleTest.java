@@ -22,7 +22,6 @@ public class SymbolRuleTest extends TFRuleBaseTest {
 				assertArrayEquals(new String[]{"do not"}, runTest(TokenFilterType.SYMBOL, "don't"));
 				assertArrayEquals(new String[]{"will not"}, runTest(TokenFilterType.SYMBOL, "won't"));
 				assertArrayEquals(new String[]{"shall not"}, runTest(TokenFilterType.SYMBOL, "shan't"));
-				assertArrayEquals(new String[]{"let us"}, runTest(TokenFilterType.SYMBOL, "let's"));
 				assertArrayEquals(new String[]{"I am"}, runTest(TokenFilterType.SYMBOL, "I'm"));
 				assertArrayEquals(new String[]{"we are"}, runTest(TokenFilterType.SYMBOL, "we're"));
 				assertArrayEquals(new String[]{"they are"}, runTest(TokenFilterType.SYMBOL, "they're"));

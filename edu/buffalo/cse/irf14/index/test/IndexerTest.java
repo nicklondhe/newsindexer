@@ -38,7 +38,7 @@ public class IndexerTest {
 	private IndexReader reader;
 	
 	@BeforeClass
-	public final void setupIndex() throws IndexerException {
+	public final static void setupIndex() throws IndexerException {
 		String[] strs = {"new home sales top sales forecasts", "home sales rise in july", 
 				"increase in home sales in july", "july new home sales rise"};
 		int len = strs.length;
@@ -53,8 +53,10 @@ public class IndexerTest {
 		}
 		
 		writer.close();
-		
-		reader = new IndexReader(dir, IndexType.TERM);
+	}
+
+	public final void before() {
+		reader = new IndexReader(System.getProperty("INDEX.DIR"), IndexType.TERM);
 	}
 	
 	/**

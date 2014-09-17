@@ -70,17 +70,6 @@ public class DateRuleTest extends TFRuleBaseTest {
 								"08470101." },
 						runTest(TokenFilterType.DATE, "Pune is known to have existed as a town since 847AD."));
 				assertArrayEquals(
-						new String[] { "The", "20040101", "Indian",
-								"Ocean", "earthquake", "was", "an",
-								"undersea", "megathrust", "earthquake",
-								"that", "occurred", "at",
-								"20041226 00:58:53" },
-						runTest(TokenFilterType.DATE, "The 2004 Indian Ocean "
-								+ "earthquake was an under sea "
-								+ "megathrust earthquake that"
-								+ " occurred at 00:58:53UTC on "
-								+ "Sunday, 26 December 2004"));
-				assertArrayEquals(
 						new String[] { "19000411", "is", "the", "101st",
 								"day", "of", "the", "year", "(102nd", "in",
 								"leap", "years)", "in", "the", "Gregorian",
