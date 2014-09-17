@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -55,6 +56,7 @@ public class IndexerTest {
 		writer.close();
 	}
 
+	@Before
 	public final void before() {
 		reader = new IndexReader(System.getProperty("INDEX.DIR"), IndexType.TERM);
 	}
