@@ -22,7 +22,7 @@ public class SpecialCharRuleTest extends TFRuleBaseTest {
 					//special symbols one by one
 					assertArrayEquals(new String[]{"destructor", "is", "method"}, 
 							runTest(TokenFilterType.SPECIALCHARS, "destructor is ~method()")); //tilda, brackets
-					assertArrayEquals(new String[]{"email", "is", "test", "buffalo.edu"}, 
+					assertArrayEquals(new String[]{"email", "is", "testbuffalo.edu"}, 
 							runTest(TokenFilterType.SPECIALCHARS, "email is test@buffalo.edu")); //@
 					assertArrayEquals(new String[]{"call", "555-5555"}, 
 							runTest(TokenFilterType.SPECIALCHARS, "call #555-5555")); //hash
