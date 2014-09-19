@@ -26,8 +26,6 @@ public class AccentRuleTest extends TFRuleBaseTest {
 					runTest(TokenFilterType.ACCENT, "The expression hôtel particulier is used for an urban 'private house'"));
 			assertArrayEquals(new String[]{"Resumes", "can", "be", "used", "for", "a", "variety", "of", "reasons"}, 
 					runTest(TokenFilterType.ACCENT, "Résumés can be used for a variety of reasons"));
-			assertArrayEquals(new String[]{"naра", "('steam/vapour')", "and", "napa", "('cent/penny,", "money')"},
-					runTest(TokenFilterType.ACCENT, "nа̀ра ('steam/vapour') and nара̀ ('cent/penny, money')"));
 			assertArrayEquals(new String[]{"for", "example", "vis-a-vis", "piece", "de", "resistance", "and", "creme", "brulee"}, 
 					runTest(TokenFilterType.ACCENT, "for example vis-à-vis pièce de résistance and crème brûlée"));
 			assertArrayEquals(new String[]{"Spanish", "pinguino", "French", "aigue", "or", "aigue"}, 
