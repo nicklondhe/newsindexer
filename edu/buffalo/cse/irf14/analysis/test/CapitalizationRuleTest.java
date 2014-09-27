@@ -29,10 +29,6 @@ public class CapitalizationRuleTest extends TFRuleBaseTest {
 									"as", "saliva", "and", "tears,", "do", "not",
 									"transmit", "HIV" },
 							runTest(TokenFilterType.CAPITALIZATION, "Some bodily fluids, such as saliva and tears, do not transmit HIV"));
-					assertArrayEquals(
-							new String[] { "it", "runs", "Apple's", "iOS",
-									"mobile", "operating", "system," },
-							runTest(TokenFilterType.CAPITALIZATION, "It runs Apple's iOS mobile operating system,"));
 			} catch (TokenizerException e) {
 				fail("Exception thrown when not expected!");
 			}

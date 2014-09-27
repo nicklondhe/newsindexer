@@ -244,7 +244,7 @@ public class IndexerTest {
 			retlist.add(temp);
 		}
 		
-		return (HashMap<String, Integer>[]) retlist.toArray();
+		return (HashMap<String, Integer>[]) retlist.toArray(new HashMap[retlist.size()]);
 	}
 
 }
