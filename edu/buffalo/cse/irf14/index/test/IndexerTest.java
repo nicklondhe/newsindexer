@@ -116,7 +116,7 @@ public class IndexerTest {
 			while (analyzer.increment()) {
 				
 			}
-			
+			stream = analyzer.getStream();
 			stream.reset();
 			return stream.next().toString();
 		} catch (TokenizerException e) {
